@@ -5,19 +5,26 @@ const Dev = require("../models/Dev");
 const routes = Router();
 
 routes.post("/", async (req, res) => {
-  const { github_username, techStack, latitude, longitude } = req.body;
+  const { githubUsername, techStack, latitude, longitude } = req.body;
 
-  const dev = await Dev.findOne({ github_username });
+  const dev = await Dev.findOne({ githubUsername });
 
   if (dev) {
     return res.json({ isError: true, error: "User already exists!" });
   }
 
-  const response = await axios.get(
-    `https://api.github.com/users/${github_username}`
-  );
+  const techStackArray = techStack.split(",").map(tech => tech.trim());
 
-  const { name = login, avatar_url, bio } = response.data;
+  let response;
+  try {
+    response = await axios.get(
+      `https://api.github.com/users/${githubUsername}`
+    );
+  } catch (error) {
+    return res.json({ isError: true, error: error.response.data.message });
+  }
+
+  const { name, login, avatar_url, bio } = response.data;
 
   const location = {
     type: "Point",
@@ -25,10 +32,10 @@ routes.post("/", async (req, res) => {
   };
 
   const devDocument = await Dev.create({
-    github_username,
-    techStack,
-    name,
-    avatar_url,
+    githubUsername,
+    techStack: techStackArray,
+    name: name || login,
+    avatarUrl: avatar_url,
     bio,
     location
   });
