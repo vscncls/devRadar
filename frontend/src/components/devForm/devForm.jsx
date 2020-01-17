@@ -39,7 +39,7 @@ export const DevForm = ({ onSubmit }) => {
       return;
     }
 
-    await onSubmit(response);
+    await onSubmit(response.data);
 
     // clean up
     setGithubUsername("");
