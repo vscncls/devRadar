@@ -1,29 +1,29 @@
 # DevRadar
 
-Find developers close to you with similar interests.
+Find developers close to you with similar interests. Developed on "Semana OmniStack".
 
 ### Features
 
-- REST API
+- Express REST API
 - React Frontend
 - Mobile app with React Native and expo
 
 ## Build
 
-```bash
+```shell
 git clone https://github.com/ramenbroth/devRadar.git
 cd devRadar
 ```
 
 cd into each folder and run
 
-```bash
+```shell
 yarn
 ```
 
 ## Runing
 
-```bash
+```shell
 cd backend
 yarn start
 
