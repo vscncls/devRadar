@@ -11,7 +11,7 @@ Find developers close to you with similar interests. Developed on "Semana OmniSt
 ## Build
 
 ```shell
-git clone https://github.com/ramenbroth/devRadar.git
+git clone https://github.com/vscncls/devRadar.git
 cd devRadar
 ```
 
