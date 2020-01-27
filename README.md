@@ -25,7 +25,7 @@ yarn
 
 ```shell
 cd backend
-yarn start
+yarn dev
 
 cd frontend
 yarn start
@@ -33,3 +33,11 @@ yarn start
 cd mobile
 yarn start
 ```
+
+## Screenshots
+
+![Frontend](https://raw.githubusercontent.com/ramenbroth/devRadar/master/screenshots/omnistack_frontend.png)
+
+![Mobile Home](https://raw.githubusercontent.com/ramenbroth/devRadar/master/screenshots/omnistack_home_mobile.jpg)
+
+![Mobile Github](https://raw.githubusercontent.com/ramenbroth/devRadar/master/screenshots/omnistack_github_mobile.jpg)
