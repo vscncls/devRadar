@@ -1,6 +1,6 @@
 # DevRadar
 
-Find developers close to you with similar interests. Developed on "Semana OmniStack".
+Find developers close to you with similar interests. Developed during "Semana OmniStack".
 
 ### Features
 
